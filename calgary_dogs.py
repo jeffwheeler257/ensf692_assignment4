@@ -7,9 +7,13 @@
 # You may import any modules from the standard Python library.
 # Remember to include docstrings and comments.
 
+import numpy as np
+import pandas as pd
+
 def main():
 
     # Import data here
+    dog_data = pd.read_excel(r".\CalgaryDogBreeds.xlsx")
 
     print("ENSF 692 Dogs of Calgary")
 
