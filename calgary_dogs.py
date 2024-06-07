@@ -13,9 +13,10 @@ import pandas as pd
 def main():
 
     # Import data here
-    dog_data = pd.read_excel(r".\CalgaryDogBreeds.xlsx")
+    dog_data = pd.read_excel(".\CalgaryDogBreeds.xlsx")
 
     print("ENSF 692 Dogs of Calgary")
+    print(dog_data.head(10))
 
     # User input stage
 
