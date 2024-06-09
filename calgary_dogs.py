@@ -1,5 +1,5 @@
 # calgary_dogs.py
-# AUTHOR NAME
+# Jeff Wheeler
 #
 # A terminal-based application for computing and printing statistics based on given input.
 # Detailed specifications are provided via the Assignment 4 README file.
