@@ -30,8 +30,6 @@ def main():
             print("Dog breed not found in the data. Please try again.")
             continue
 
-    # Data anaylsis stage
-
     # Find and print all years where the selected breed was listed in the top breeds.
     years = dog_data.loc[dog_data.Breed == dog_breed, ['Year']]['Year'].unique()
     # years_str =
@@ -53,12 +51,16 @@ def main():
     breed_tot = breed_2021 + breed_2022 + breed_2023
 
     print(f"The {dog_breed} was {round(breed_2021/num_of_dogs_2021 * 100, 6)}% of top breeds in 2021.")
-    print(f"The {dog_breed} was {round(breed_2022/num_of_dogs_2022 * 100, 6)}% of top breeds in 2021.")
-    print(f"The {dog_breed} was {round(breed_2023/num_of_dogs_2023 * 100, 6)}% of top breeds in 2021.")
+    print(f"The {dog_breed} was {round(breed_2022/num_of_dogs_2022 * 100, 6)}% of top breeds in 2022.")
+    print(f"The {dog_breed} was {round(breed_2023/num_of_dogs_2023 * 100, 6)}% of top breeds in 2023.")
     print(f"The {dog_breed} was {round(breed_tot/num_of_dogs * 100, 6)}% of top breeds across all years.")
 
-    # Find and print the months that were most popular for the selected breed registrations. Print all months that tie
-    # print(dog_data.groupby(['Month']).count())
+    # Find and print the months that were most popular for the selected breed registrations.
+    # For most popular month, I grouped the months over the 3 years and took the month with the highest registrations over the 3 year period as most popular
+    mon_sum = dog_data.loc[dog_data.Breed == dog_breed, ['Month', 'Total']].groupby(['Month']).sum()
+    mon_max = mon_sum.idxmax().iloc[0]
+
+    print(f"Most popular month(s) for {dog_breed} dogs: {mon_max}\n")
 
 if __name__ == '__main__':
     main()
