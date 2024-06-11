@@ -34,7 +34,8 @@ def main():
 
     # Find and print all years where the selected breed was listed in the top breeds.
     years = dog_data.loc[dog_data.Breed == dog_breed, ['Year']]['Year'].unique()
-    print(f"The {dog_breed} was found in the top breeds for years: {years}")
+    # years_str =
+    print(f"The {dog_breed} was found in the top breeds for years: {years}") # way to format years list as individual values
 
     # Calculate and print the total number of registrations of the selected breed found in the dataset.
     total = dog_data.loc[dog_data.Breed == dog_breed, ['Total']]['Total'].sum()
@@ -57,7 +58,7 @@ def main():
     print(f"The {dog_breed} was {round(breed_tot/num_of_dogs * 100, 6)}% of top breeds across all years.")
 
     # Find and print the months that were most popular for the selected breed registrations. Print all months that tie
-
+    # print(dog_data.groupby(['Month']).count())
 
 if __name__ == '__main__':
     main()
